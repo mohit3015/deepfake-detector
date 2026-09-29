@@ -38,8 +38,14 @@ def load_model():
 @torch.no_grad()
 def p_fake(model, pil_img):
     x = tfm(pil_img.convert("RGB")).unsqueeze(0)
-    probs = torch.softmax(model(x), dim=1)[0]
-    return probs[0].item()  # index 0 = fake
+
+    logits = model(x)
+    probs = torch.softmax(logits, dim=1)[0]
+
+    st.write("FAKE:", probs[0].item())
+    st.write("REAL:", probs[1].item())
+
+    return probs[0].item()
 
 
 def show_result(pf):
@@ -52,7 +58,7 @@ def show_result(pf):
     st.progress(float(pf), text=f"Fake probability: {pf:.1%}")
 
 
-st.title("🕵️ Deepfake Detector")
+st.title("Deepfake Detector")
 st.write("EfficientNet-B4 based. Face image ya chhota video upload karo.")
 st.caption(
     "Demo only: ~94% accuracy on the 140K Real and Fake Faces test set. "
