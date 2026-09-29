@@ -2,8 +2,9 @@
 
 AI-powered deepfake detection web app built with **EfficientNet-B4** (PyTorch + timm) and a **Streamlit** UI. Upload a face image or a short video and get a Real/Fake prediction with a confidence score.
 
-**Live demo:** _(link add karna baad me)_
-**Model weights:** [mohitbharti1530/deepfake-detector-model](https://huggingface.co/mohitbharti1530/deepfake-detector-model)
+**<img width="1920" height="1031" alt="Screenshot (466)" src="https://github.com/user-attachments/assets/3dad0d61-0cd4-4758-a3cd-25e9f81a19c6" />
+Live Demo:** [Try Deepfake Detector](https://deepfake-detector-8udmw6gnlnmmqy5yse8kru.streamlit.app)
+**Model Weights:** [Hugging Face](https://huggingface.co/mohitbharti1530/deepfake-detector-model)
 
 ## Features
 - Image detection with Real/Fake probability
